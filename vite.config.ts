@@ -5,4 +5,10 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  // Override PostCSS config to prevent Vite from searching parent directories
+  css: {
+    postcss: {
+      plugins: [],
+    },
+  },
 });
